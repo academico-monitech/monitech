@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="../css/index.css" />
+        <link rel="stylesheet" href="../css/card.css" />
+        <link rel="stylesheet" href="../css/setups.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <div class="body">
+            <div class="page">
+                <div class="sec-1">
+                    <div class="lista">{%CARDS%}</div>
+                </div>
+                <div class="sec-2">
+                    <div class="sec-2-1">
+                        <div class="info">
+                            <h2 id="hostname">{%NOMEDONO%}</h2>
+                            <p id="equipe">{%NOMEEQUIPE%}</p>
+                            <div class="etiqueta" id="etiqueta"></div>
+                        </div>
+                    </div>
+                    <div class="sec-2-2">
+                        <div class="sec-2-2-1">
+                            <div class="content-setup">
+                                <div class="content-info-setup">
+                                    <p id="processador">
+                                        {%PROCESSADOR%}
+                                    </p>
+                                    <p id="ram">Memória RAM: {%RAM%}</p>
+                                    <p id="storage">Storage: {%STOR%}</p>
+                                </div>
+                                <div class="content-ram">
+                                    <p>Consumo memória:</p>
+                                    <div class="total-ram">
+                                        <div class="qtd-ram"></div>
+                                    </div>
+                                </div>
+                                <div class="content-storage">
+                                    <p>Espaço em disco:</p>
+                                    <div class="porcent-storage">
+                                        <span id="storage-number">35%</span>
+                                        <p>ocupado</p>
+                                    </div>
+                                    <canvas
+                                        id="chart-storage-doughnut"
+                                        width="120"
+                                        height="120"
+                                    ></canvas>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="sec-2-2-2">
+                            <div class="graf">
+                                <canvas
+                                    id="chartCPU"
+                                    width="411"
+                                    height="100"
+                                ></canvas>
+                            </div>
+                            <div class="graf">
+                                <canvas
+                                    id="chartRAM"
+                                    width="411"
+                                    height="100"
+                                ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/setups.js"></script>
+

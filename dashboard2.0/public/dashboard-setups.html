@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/template.css" />
+    <link rel="stylesheet" href="../css/card.css" />
+    <link rel="stylesheet" href="../css/setups.css" />
+    <title>Document</title>
+</head>
+<body onload="validarSessao()">
+    <header>
+        <div class="box-shadow"></div>
+        <img src="./assets/icons/logo-header.svg" alt="">
+        <div class="info-usuario">
+            <p id="nome_usuario">{%NOMEUSUARIO%}</p>
+            <p id="cargo_usuario">{%CARGOUSUARIO%}</p>
+        </div>
+    </header>
+
+    <div class="menu" id="menu">
+        <div class="box-shadow"></div>
+        <div class="interacao-menu">
+            <img src="./assets/icons/x.svg" alt="" id="botao-interacao" class="mostrando hover">
+        </div>
+        <div class="content-menu"></div>
+            <div class="item bem-vindo">
+                <div class="item-content hover bem-vindo">
+                    <img src="./assets/icons/icons8-home-144 1 (1).svg" alt="">
+                    <p>Bem vindo!</p>
+                </div>
+            </div>
+            <div class="item expansivel">
+                <div class="btn-esconder mostrando"></div>
+                <div class="item-content hover btn-esconder-div">
+                    <img src="./assets/icons/speedometer-svgrepo-com 1 (1).svg" alt="">
+                    <p>Dashboard</p>
+                </div>
+                <div class="subitem-content">
+                    <p class="hover setups">Setups</p>
+                    <p class="hover inventario">Inventário</p>
+                </div>
+            </div>
+            <div class="item ">
+                <div class="item-content hover equipes">
+                    <img src="./assets/icons/grupo-azul.svg" alt="">
+                    <p>Equipes</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page">
+        <div class="sec-1">
+            <img src="/assets/icons/update.svg" class="btn hover" onclick="getList()">Atualizar</img>
+                <div class="lista">
+                    
+                </div>
+            </div>
+            <div class="sec-2">
+                <div class="sec-2-1">
+                    <div class="info">
+                        <h2 id="hostname">{%NOMEDONO%}</h2>
+                        <p id="equipe">{%NOMEEQUIPE%}</p>
+                        <div class="etiqueta" id="etiqueta"></div>
+                    </div>
+                </div>
+                <div class="sec-2-2">
+                    <div class="sec-2-2-1">
+                        <div class="content-setup">
+                            <div class="content-info-setup">
+                                <p id="processador">
+                                    {%PROCESSADOR%}
+                                </p>
+                                <p id="ram">Memória RAM: {%RAM%}</p>
+                                <p id="storage">Storage: {%STOR%}</p>
+                            </div>
+                            <div class="content-ram">
+                                <p>Consumo memória:</p>
+                                <div class="total-ram">
+                                    <div class="qtd-ram" id="qtd_ram"></div>
+                                </div>
+                            </div>
+                            <div class="content-storage">
+                                <p>Espaço em disco:</p>
+                                <div class="porcent-storage">
+                                    <span id="storage-number">35%</span>
+                                    <p>ocupado</p>
+                                </div>
+                                <canvas
+                                    id="chart-storage-doughnut"
+                                    width="120"
+                                    height="120"
+                                ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sec-2-2-2">
+                        <div class="graf">
+                            <canvas
+                                id="chartCPU"
+                                width="370"
+                                height="150"
+                            ></canvas>
+                        </div>
+                        <div class="graf">
+                            <canvas
+                                id="chartRAM"
+                                width="370"
+                                height="150"
+                            ></canvas>
+                        </div>
+                    </div>
+                </div>
+            </div>
+    </div>
+</body>
+</html>
+<script src="./js/events.js"></script>
+<script src="./js/elements.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="../js/charts.js"></script>
+<script src="../js/setups.js"></script>
+<script src="./js/funções.js"></script>
+<script>
+    getList();
+</script>

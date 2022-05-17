@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/template.css" />
+    <link rel="stylesheet" href="/css/bem-vindo.css">
+    <title>Document</title>
+</head>
+<body onload="">
+    <div class="body">
+        <header>
+            <div class="box-shadow"></div>
+            <img src="/assets/icons/logo-header.svg" alt="">
+            <div class="info-usuario">
+                <p id="nome_usuario">{%NOMEUSUARIO%}</p>
+                <p id="cargo_usuario">{%CARGOUSUARIO%}</p>
+            </div>
+        </header>
+        <div class="menu" id="menu">
+            <div class="box-shadow"></div>
+            <div class="interacao-menu">
+                <img src="/assets/icons/x.svg" alt="" id="botao-interacao" class="mostrando hover">
+            </div>
+            <div class="content-menu"></div>
+                <div class="item ">
+                    <div class="item-content hover bem-vindo">
+                        <img src="/assets/icons/icons8-home-144 1 (1).svg" alt="">
+                        <p>Bem vindo!</p>
+                    </div>
+                </div>
+                <div class="item expansivel">
+                    <div class="btn-esconder mostrando"></div>
+                    <div class="item-content hover btn-esconder-div">
+                        <img src="/assets/icons/speedometer-svgrepo-com 1 (1).svg" alt="">
+                        <p>Dashboard</p>
+                    </div>
+                    <div class="subitem-content">
+                        <p class="hover setups">Setups</p>
+                        <p class="hover inventario">Inventário</p>
+                    </div>
+                </div>
+                <div class="item ">
+                    <div class="item-content hover equipes">
+                        <img src="/assets/icons/grupo-azul.svg" alt="">
+                        <p>Equipes</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="page">
+            <div class="home-sec-2">
+                <div class="carrossel-content">
+                    <div class="page-carrossel">
+                        <img src="/assets/home-img1.png" class="img"></img>
+                        <p>Para iniciar a navegação vá com o cursor até dashboard, expanda e clique em setups</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="/js/events.js"></script>
+<script src="/js/elements.js"></script>
+<script src="./js/funções.js"></script>

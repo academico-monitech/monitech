@@ -1,0 +1,391 @@
+@font-face {
+  font-family: Work Sans2;
+  src: url("../fonts/WorkSans-Italic-VariableFont_wght.ttf")
+}
+
+@font-face {
+  font-family: Work Sans;
+  src: url("../fonts/WorkSans-VariableFont_wght.ttf")
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: #f2f2f2;
+}
+
+a {
+  text-decoration: none;
+  color: #474A51;
+}
+
+.headline {
+  font-size: 2.2rem;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  padding-bottom: 50px;
+  color: #474A51;
+  letter-spacing: 5px;
+}
+
+.headline:hover {
+  font-size: 2.5rem;
+  letter-spacing: 10px;
+  transition: 1s;
+  cursor: default;
+}
+
+/* navbar */
+#navbar {
+  width: 100%;
+  height: 50px;
+  background: #f2f2f2b6;
+  color: #474A51;
+  position: fixed;
+  box-shadow: 0px 0px 27.0741px -1.46346px rgba(17, 24, 39, 0.05);
+}
+
+#navbar-container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+}
+
+#navbar-items {
+  display: flex;
+  list-style: none;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+}
+
+#navbar-items li {
+  padding: 10px;
+}
+
+#navbar-items li:hover {
+  font-weight: bold;
+  border-bottom: 2px solid #2947A9;
+}
+
+/* showcase */
+#showcase {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #363638;
+  background: url('../assets/lance-anderson-QdAAasrZhdk-unsplash.jpg') no-repeat center center/cover;
+}
+
+#btn-menu {
+  display: none;
+}
+
+#showcase-container {
+  text-align: center;
+}
+
+#showcase-container h2 {
+  font-size: 2.8rem;
+}
+
+/* clients */
+#clients {
+  width: 100%;
+  color: #474A51;
+  padding: 50px;
+}
+
+#clients-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  justify-items: center;
+  padding: 15px;
+}
+
+#clients-container img {
+  width: 100px;
+}
+
+.client {
+  display: inline-block;
+  width: 25%;
+}
+
+/* about */
+#features {
+  width: 100%;
+  color: #f2f2f2;
+  padding: 50px;
+}
+
+#features-container {
+  width: 100%;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 50px;
+}
+
+.feature {
+  display: flex;
+  flex-direction: column;
+  background: #2947A9;
+  padding: 20px;
+  border-radius: 5px;
+}
+
+.feature:hover{
+  background-color: #474A51;
+  transition: 1s;
+}
+.feature p{
+  font-family: 'work sans', sans-serif;
+  font-weight: 100;
+  text-align: center;
+  padding-top: 10px;
+}
+
+.feature-title {
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+/* product */
+#product {
+  width: 100%;
+  padding: 50px;
+  color: #474A51;
+}
+
+#product-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#items {
+  width: 650px;
+}
+
+#items img {
+  width: 50px;
+  height: 50px;
+}
+
+#items .item {
+  display: flex;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+.item:hover {
+  font-weight: bold;
+
+}
+
+/* testemonials */
+#testimonials {
+  width: 100%;
+  padding: 50px;
+}
+
+.testimonial {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  background: #2947A9;
+  color: #f2f2f2;
+  padding: 15px;
+  margin: 15px 0;
+}
+.testimonial:hover{
+  background: #474A51;
+  transition: 1s;
+}
+#testimonials-container {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.testimonial .testimonial-image {
+  height: 200px;
+  width: auto;
+  border-radius: 50%;
+  margin: 15px;
+}
+.testimonial .testimonial-image:hover{
+  height: 250px;
+  transition: 1s;
+  cursor: zoom-in;
+}
+
+/* What can us do for you? */
+.for-container {
+
+  margin-top: 50px;
+  align-items: center;
+  justify-content: center;
+  /* font-family: 'Work Sans'; */
+  font-weight: bold;
+  /* font-size: 14.6346px;
+  line-height: 17px; */
+  text-align: center;
+  color: #292E3D;
+
+
+}
+
+.for-container h2 {
+  /* font-family: 'Work Sans'; */
+  font-weight: bolder;
+  /* font-size: 14.6346px;
+  line-height: 17px; */
+  text-align: center;
+  color: #292E3D;
+
+
+}
+
+
+.for {
+
+  border-radius: 2.92693px;
+  align-items: center;
+  justify-content: center;
+
+}
+
+
+
+.dados1 {
+  /* box-shadow: 0px 0px 27.0741px -1.46346px rgba(17, 24, 39, 0.05); */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.dados1 p{
+  margin-top: 30px;
+  font-weight: normal;
+}
+
+.dados1 input {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 8px;
+  border: 1px solid #E0E3EB;
+  box-sizing: border-box;
+  border-radius: 4px;
+  /* box-shadow: 0px 0px 27.0741px -1.46346px rgba(17, 24, 39, 0.05); */
+}
+
+.dados2 {
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+
+}
+.dados2 p{
+  margin-top: 30px;
+  font-weight: normal;
+}
+
+.dados2 input {
+  width: 300px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px 8px;
+  border: 1px solid #E0E3EB;
+  box-sizing: border-box;
+  border-radius: 4px;
+
+}
+
+.for .button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-top: 150px;
+  margin-bottom: 20px;
+
+  margin-top: 80px;
+  margin-bottom: 100px;
+
+}
+
+.for button {
+  display: inline-block;
+  padding: 15px 60px;
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  background: #2947A9;
+  color: #eee;
+  border-radius: 5px;
+  border: 0px;
+  cursor: pointer;
+}
+
+.for button:hover {
+  background: #474A51;
+
+}
+
+.contact-container {
+  background: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* footer */
+#footer {
+  background: #2947A9;
+  color: #f2f2f2;
+  padding: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+#footer .socials {
+  display: flex;
+  justify-content: center;
+}
+
+.socials li {
+  list-style: none;
+  padding: 20px;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            .chart-bars {
+                width: 360px;
+                height: 150px;
+            }
+            body {
+                background-color: #000;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="chart-bars">
+            <canvas id="myChart" width="420" height="150"></canvas>
+        </div>
+    </body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    var options = {
+            backgroundColor: "#a16acd",
+            plugins: {
+                legend: {
+                    display: false,
+
+                },
+                title: {
+                    display: true,
+                    text: "Custom Chart Title",
+                    color: "#FFF",
+                },
+            },
+            fill: true,
+            scales: {
+                x: {
+
+                    grid: {
+                        display: false,
+                    },
+                    ticks: {
+                        color: "#FFF",
+                    }
+                },
+                y: {
+                    max: 100,
+                    min: 0,
+                    ticks: {
+                        color: "#FFF",
+                        stepSize: 50,
+                        fontColor: "#5555ff",
+                    },
+                    grid: {
+                        display: false,
+                    },
+                },
+            },
+            elements: {
+                line: {
+                    backgroundColor: "#a16acd",
+                },
+            },
+        }
+
+
+    const data = {
+        labels: [1, 1, 1, 1, 1, 1, 1],
+        datasets: [
+            {
+                label: "My First Dataset",
+                data: [65, 59, 80, 81, 56, 55, 40],
+                fill: false,
+                borderColor: "#c27afb",
+                tension: 0,
+                fill: true,
+            },
+        ],
+    };
+
+    const config = {
+        type: "line",
+        data: data,
+        options: options 
+    };
+    const ct1 = document.getElementById("myChart");
+    const chart = new Chart(ct1, config);
+</script>

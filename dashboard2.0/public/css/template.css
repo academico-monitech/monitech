@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+*{
+    font-family: 'Inter';
+    font-style: normal;
+    margin: 0;
+}
+body {
+    background-color: #F2F3F8;
+    min-height: 100vh;
+}
+
+.body{
+    margin: 0;
+    padding: 0;
+    position: relative;
+    background-color: #F2F3F8;
+    min-height: 100vh;
+}
+
+header, .menu, .box-shadow, .page {
+    position: absolute;
+}
+
+header{
+    width: 100%;
+    height: 45px;
+    position: absolute;
+    height: 45px;
+    background-color: #FFF;
+}
+
+.menu {
+    width: 189px;
+    height: calc(100vh - 45px);
+    top: 45px;
+    left: 0;
+    background-color: #387ADD;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    align-content: flex-start;
+    transition: 0.5s;
+}
+
+.menu > * {
+    user-select: none;
+}
+
+.escondido{
+    display: none;
+}
+
+.interacao-menu, .item {
+    width: 100%;
+}
+
+.box-shadow{ 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    z-index: -1;
+}
+
+header > .box-shadow{
+    width: 100%;
+    height: 45px;
+    right: 0px;
+}
+
+.menu > .box-shadow {
+    width: 100%;
+    height: 100%;
+}
+
+header > img {
+    height: 45px;
+    position: absolute;
+    left: 35px;
+}
+
+.info-usuario{
+    width: min-content;
+    position: absolute;
+    right: 35px;
+    height: 45px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-usuario > p{
+    color: #5A5858;
+    width: 100%;
+}
+
+.info-usuario > #nome_usuario{
+    margin-top: 4px;
+    margin-bottom: 0;
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.info-usuario > #cargo_usuario{
+    margin-bottom: 4px;
+    margin-top: 0;
+    font-weight: 600;
+    font-size: 15px;    
+}
+
+.interacao-menu{
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.interacao-menu > img{
+    margin-right: 17px;
+    transition: 0.3s;
+}
+
+.hover{
+    opacity: 50%;
+}
+
+.item {
+    height: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    overflow-y: hidden;
+    position: relative;
+    transition: 0.3s;
+}
+
+.btn-esconder{
+    position: absolute;
+    width: 7.79px;
+    height: 6.75px;
+    top: 18px;
+    right: 20.21px;
+    background-image: url("../assets/icons/triangulo.svg");
+    transform: rotate(180deg);
+    transition: 0.3s;
+}
+
+.expansivel{
+    height: auto;
+    padding-bottom: 15px;
+}
+
+.item-content{
+    width: 154px;
+    height: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-top: 7px;
+    cursor: pointer;
+}
+
+.item-content p{
+    font-weight: 600;
+    font-size: 14px;
+    margin-left: 27px;
+    user-select: none;
+    color: #FFF;
+}
+
+.item-content img{
+    width: 20px;
+}
+
+.subitem-content {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 7px;
+}
+
+.subitem-content p {
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 15px;
+    width: 100%;
+    margin: 0;
+    margin-left: 15px;
+    color: #FFF;
+}
+
+.page{
+    right: 55px;
+    bottom: 55px;
+    width: 1067px;
+    height: calc(100% - 155px);
+}
+
+.opacity{
+    opacity: 50%;
+}

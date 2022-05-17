@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/poslogin.css">
+  <link rel="stylesheet" href="./css/Simulador.css">
+  <title>Document</title>
+</head>
+<body>
+
+  
+  <div class="sidebar">
+    <div class="logo_content">
+      <div class="logo">
+        <i class='bx bxl-unsplash'></i>
+        <div class="logo_name"><h1 style="font-family: run;">Opus </h1>
+        
+    </div>
+  </div>
+  <i class='bx bx-menu' id="btn" ></i>
+</div>
+    <ul class="nav_list">
+      <li>
+          <i class='bx bx-search' ></i>
+          <input type="text" placeholder="Pesquisa...">
+        </a>
+        <span class="tooltip">Pesquisa</span>
+      </li>
+      <li>
+      <a href="./Cursos.html">
+        <i class='bx bx-grid-alt' ></i>
+        <span class="links_name">Cursos</span>
+      </a>
+      <span class="tooltip">Cursos</span>
+    </li>
+    <li>
+    <a href="./Analytics.html">
+      <i class='bx bx-line-chart' ></i>
+      <span class="links_name">Analytics</span>
+    </a>
+    <span class="tooltip">Analytics</span>
+  </li>
+  <li>
+    <a href="./Simulador.html">
+  <i class='bx bx-calculator'></i>
+  <span class="links_name">Simulador</span>
+</a>
+<span class="tooltip">Simulador</span>
+</li>
+  <li>
+  <a href="#">
+    <i class='bx bxs-cog' ></i>
+    <span class="links_name">Configuração</span>
+  </a>
+  
+  <span class="tooltip">Configuração</span>
+</li>
+    </ul>
+    <div class="profile_content">
+      <div class="profile">
+        <div class="profile_details">
+          <img src="./assets/pedro.jpg" alt="">
+          <div class="name_job">
+            <div class="name">Pedro Rosário</div>
+            <div class="job">Analista</div>
+          </div>
+        </div>
+        <a href="./index.html"> <i class='bx bx-log-out' id="log_out"></i></a>
+       
+      </div>
+    </div>
+  </div>
+ 
+
+  <!-- Calculadora -->
+
+  
+  <div class="cal-container">
+    <h1>Simulador</h1>
+        <div class="caixa">
+            <label for="Salário">Informe seu salário:</label>
+            <input id="salario_input" type="text" placeholder="R$ XXXX.XX">
+            
+            <button class="btn" onclick="calcular()">Calcular</button>
+            
+        </div>
+       <b><div id="div_resposta">
+           
+       </div>
+      </b>
+        </div>
+
+</body>
+</html>
+<script>
+  let btn = document.querySelector("#btn");
+  let sidebar = document.querySelector(".sidebar");
+  let searchBtn = document.querySelector(".bx-search");
+
+  btn.onclick = function(){
+    sidebar.classList.toggle("active")
+  }
+
+  searchBtn.onclick = function(){
+    sidebar.classList.toggle("active")
+  }
+
+  btn.onclick = function(){
+    sidebar.classList.toggle("active")
+  }
+
+
+    function calcular(){
+      var Salario = Number(salario_input.value);
+
+      if(salario_input.value == ""){
+        alert("Insira um valor valído")
+      }
+      else{
+      var Fixo = Salario * 0.50 
+      var variável = Salario * 0.30
+      var segurança = Salario * 0.20
+      div_resposta.innerHTML = `O gasto fixo que você pode ter é de 50% da sua renda, ou seja R$${Fixo}. `
+      div_resposta.innerHTML += `<br><br>Já o gasto variável pode comprometer 30% do seu salário, ou seja R$${variável}.`
+      div_resposta.innerHTML += `<br><br>Já com o valor restante ou pelo menos 20% da renda, ou seja R$${segurança} recomenda-se que você invista ou poupe.`
+    }
+  }
+
+
+
+</script>

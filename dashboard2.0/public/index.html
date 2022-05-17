@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="./assets/icon.svg">
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/responsive.css">
+    <title>Monitech</title>
+</head>
+
+<body>
+    <div class="fundo">
+        <div class="box">
+            <p>Obrigado!</p> 
+            <p>Analisaremos sua dúvida e entraremos em contato.</p>
+            <button id="btn_popup" onclick="fechar()">Voltar</button>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <div id="navbar-container">
+            <div class="logo"><img src="./assets/logo-header.svg" alt=""></div>
+            <ul id="navbar-items">
+                <li><a href="#showcase">Início</a></li>
+                <li><a href="#clients">Sobre nós</a></li>
+                <li><a href="#contact">Contato</a></li>
+                <li><a href="./cadastro.html">Cadastro</a></li>
+                <li><a href="./login.html">Login</a></li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <!--Banner-->
+    <header id="showcase">
+        <div id="showcase-container">
+            <h2>Monitorar no presente para decidir no futuro.</h2>
+        </div>
+    </header>
+    
+    <!--About-->
+    <section id="clients">
+        <div class="headline">Nossos clientes</div>
+        <div id="clients-container">
+            <img src="./assets/accenture.png" class="client" alt="">
+            <img src="./assets/c6bank.png" class="client" alt="">
+            <img src="./assets/deloitte.png" class="client" alt="">
+            <img src="./assets/jpmorgan.png" class="client" alt="">
+        </div>
+    </section>
+
+    <section id="features">
+        <div class="headline">O que fazemos</div>
+        <div id="features-container">
+            <div class="feature">
+                <i class="fas fa-tachometer-alt fa-3x"></i>
+                <span class="feature-title">Melhores performances</span>
+                <p>Ajudamos sua empresa a monitorar e acompanhar o desempenho das máquinas de seus colboradores.</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-code fa-3x"></i>
+                <span class="feature-title">Melhores equipes</span>
+                <p>Nossa equipe é composta por profissionais capacitados e preparados para atender as necessidades dos
+                    usuários.</p>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-layer-group fa-3x"></i>
+                    <span class="feature-title">Melhores serviços</span>
+                    <p>Com base na qualidade e precisão do serviço oferecido, podemos garantir um resultado satisfatório e
+                        inovador.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="product">
+                <div class="headline">Nossos Objetivos</div>
+                <div id="product-container">
+                    <img src="./assets/iphone-x.png" alt="" class="iphone-x">
+                    <div id="items">
+                        <div class="item">
+                            <img src="./assets/objetive.png" alt="">
+                            <p>Monitorar a performance e o desempenho de máquinas corporativas.</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/objetive.png" alt="">
+                    <p>Gerar gráfcos que trazem uma forma mais visual de acompanhamento de dados.</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/objetive.png" alt="">
+                    <p>Garantir a diminuição do trabalho manual de monitoramento individual e coletivo das máquinas.</p>
+                </div>
+                <div class="item">
+                    <img src="./assets/objetive.png" alt="">
+                    <p>Facilitar a análise de dados com base nas informações registratas e tratadas através da plataforma.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <section id="testimonials">
+        <div class="headline">O que acham de nós</div>
+        <div id="testimonials-container">
+            <div class="testimonial">
+                <img src="./assets/pessoa1.png" alt="" class="testimonial-image">
+                <p>"A Monitech tem uma proposta inovadora que visa facilitar a vida de pessoas como eu, acredito que a
+                    ideia da empresa agrega muito valor e traz uma praticidade maior no dia a dia." <br><br><i>Carlos
+                        Feitosa, Gerente de infraestrutura</i></p>
+                    </div>
+                    <div class="testimonial">
+                        <p>"Quando fiquei sabendo da solução dessa empresa, a primeira coisa que fiz foi pesquisar mais sobre
+                            ela e suas vantagens, hoje não me vejo mais sem utilizar os serviços que são
+                    oferecidos."<br><br><i>Olívia Rogéria, Coodernadora de Suporte</i></p>
+                    <img src="./assets/pessoa2.png" alt="" class="testimonial-image">
+                </div>
+            </div>
+        </section>
+        
+        <div class="for-container" id="contact">
+            <div class="headline">Fale conosco</div>
+        <p>Estamos à disposição para esclarecer dúvidas e compreender demandas.</p>
+        <div class="for">
+            
+            
+            <form id="form_contato" name="form-contato">
+                <div class="dados1">
+                    <p>Nome:</p>
+                    <input id="ipt_nome" type="text" placeholder="Nome Sobrenome">
+                    <p>Email:</p>
+                    <input id="ipt_email" type="email" placeholder="nome@email.com">
+                </div>
+                <div class="dados2">
+                    <p>Razão para o contato:</p>
+                    <input id="ipt_descricao" type="text" placeholder="Meu motivo do contato é...">
+                    <p>Telefone:</p>
+                    <input id="ipt_telefone" type="text" placeholder="(99)9999-9999">
+                </div>
+                <div class="button" id="btn-cadastro"> <button type="submit">Enviar</button></div>
+            </form>
+            
+            <a id="btn-menu" href="#"><img src="./assets/topo-menu.png" alt=""> menu</a>
+        </div>
+    </div>
+    <!-- <section id="gallery">
+        <div class="headline">Galeria</div>
+        <div id="gallery-container">
+            <img src="./assets/image-1.jpg" alt="" class="gallery-image">
+            <img src="./assets/image-2.jpg" alt="" class="gallery-image">
+            <img src="./assets/image-3.jpg" alt="" class="gallery-image">
+            <img src="./assets/image-4.jpg" alt="" class="gallery-image">
+            <img src="./assets/image-5.jpg" alt="" class="gallery-image">
+            <img src="./assets/image-6.jpg" alt="" class="gallery-image">
+        </div>
+    </section> -->
+    
+    <footer id="footer">
+        <p>Copyright 2022 - Todos os direitos reservados.</p>
+        <p>Feito por Monitech.</p>
+        <ul class="socials">
+            <li><a href="#"><img src="./assets/facebook.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/instagram.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/linkedin.png" alt=""></a></li>
+            <li><a href="#"><img src="./assets/twitter.png" alt=""></a></li>
+        </ul>
+    </footer>
+    <!--FontAwesome-->
+    <script src="https://kit.fontawesome.com/4ffeae9085.js" crossorigin="anonymous"></script>
+    
+</body>
+
+</html>
+
+<script src="./js/index.js"></script>
