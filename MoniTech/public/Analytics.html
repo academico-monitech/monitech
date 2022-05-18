@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+  <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/poslogin.css">
+  <link rel="stylesheet" href="./css/Analytics.css" />
+  
+
+  <!--
+      script que incorpora um arquivo javascript externo, onde passamos o src (source - fonte) 
+      do arquivo com uma URL ou o nome do arquivo, caso estejam no mesmo diretório
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- 
+    isso faz com que o arquivo/documento dashboard.html, possa utilizar de funções e outras utilidades 
+    desse código-fonte fornecido pelo CDN (Google it) do ChartJS
+  -->
+</head>
+
+<body>
+  <!-- sidebar -->
+
+   
+  <div class="sidebar">
+    <div class="logo_content">
+      <div class="logo">
+        <i class='bx bxl-unsplash'></i>
+        <div class="logo_name"><h1 style="font-family: run;">Opus </h1>
+        
+    </div>
+  </div>
+  <i class='bx bx-menu' id="btn" ></i>
+</div>
+    <ul class="nav_list">
+      <li>
+          <i class='bx bx-search' ></i>
+          <input type="text" placeholder="Pesquisa...">
+        </a>
+        <span class="tooltip">Pesquisa</span>
+      </li>
+      <li>
+      <a href="./Cursos.html">
+        <i class='bx bx-grid-alt' ></i>
+        <span class="links_name">Cursos</span>
+      </a>
+      <span class="tooltip">Cursos</span>
+    </li>
+    <li>
+    <a href="./Analytics.html">
+      <i class='bx bx-line-chart' ></i>
+      <span class="links_name">Analytics</span>
+    </a>
+    <span class="tooltip">Analytics</span>
+  </li>
+  
+  <li>
+    <a href="./Simulador.html">
+  <i class='bx bx-calculator'></i>
+  <span class="links_name">Simulador</span>
+</a>
+<span class="tooltip">Simulador</span>
+</li>
+  <li>
+
+  <a href="#">
+    <i class='bx bxs-cog' ></i>
+    <span class="links_name">Configuração</span>
+  </a>
+  
+  <span class="tooltip">Configuração</span>
+</li>
+    </ul>
+    <div class="profile_content">
+      <div class="profile">
+        <div class="profile_details">
+          <img src="./assets/pedro.jpg" alt="">
+          <div class="name_job">
+            <div class="name">Pedro Rosário</div>
+            <div class="job">Analista </div>
+          </div>
+        </div>
+        <a href="./index.html"> <i class='bx bx-log-out' id="log_out"></i></a>
+       
+      </div>
+    </div>
+  </div>
+ 
+
+<!-- Banner -->
+
+
+  <div class="dash-container">
+
+   <h1>Faixa etária dos usuários </h1>
+    <div class="graph">
+      <canvas id="chartPie" style="width: 100%; height: 100%;"></canvas>
+    </div>
+    <h1>Localização dos usuários</h1>
+     <div class="graph">
+      <canvas id="chartBar" style="width: 100%; height: 100%;"></canvas>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script>
+  // gráfico de Barras
+  
+  var ctxBar = document.getElementById("chartBar").getContext("2d");
+  var rotulosBar = [ "São Paulo","Minas Gerais", "Rio de Janeiro"];
+  var dataBar = [];
+  var configBar = {
+    type: 'bar',
+    data: {
+      labels: rotulosBar, // referenciando a variável de rótulos (labels) para o gráfico de barras
+      datasets: [
+        {
+          label: 'Estado',
+          data: dataBar, // referenciando a variável de dados para o gráfico de barras
+          backgroundColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+          ],
+          borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      // por padrão, vem como 'true', e faz com que o gráfico se 'mantenha com o mesmo aspecto de proporção', não ficando responsivo
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+        
+
+        }
+      }
+    }
+  }
+// criando o gráfico, chamando o new Chart da biblioteca, passando o contexto e as configurações
+
+  
+ 
+ // gráfico de Pizza/Torta
+ var ctxPie = document.getElementById("chartPie").getContext("2d");
+ var rotulosPie = ["jovem", "adulto", "idoso"];
+ var dataPie = [];
+ var configPie = {
+   type: 'pie',
+   data: {
+     labels: rotulosPie, // referenciando a variável de rótulos (labels) para o gráfico de pizza/torta
+     datasets: [
+       {
+         label: 'Título do Gráfico',
+         data: dataPie, // referenciando a variável de dados para o gráfico de pizza/torta
+         backgroundColor: [
+           '#FF0000',
+            '#FFFF00',
+            '#FF00FF',
+            '#00FFFF22',
+            '#99009922',
+            '#99990022',
+            '#F0F00022',
+            '#65002222',
+          ],
+          borderColor: [
+            '#FF0000',
+            '#FFFF00',
+            '#FF00FF',
+            '#00FFFF',
+            '#990099',
+            '#999900',
+            '#F0F000',
+            '#650022',
+          ],
+          borderWidth: 1
+        }
+      ]
+    },
+    options: {
+      // por padrão, vem como 'true', e faz com que o gráfico se 'mantenha com o mesmo aspecto de proporção', não ficando responsivo
+      maintainAspectRatio: false,
+      scales: {
+        y: {
+          beginAtZero: true,
+          ticks:{
+                color: '#1b1b23'
+  
+
+          },
+        }
+      }
+    }
+  }
+  
+  
+  fetch("/usuarios/ultimasIdade", { cache: 'no-store' }).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (resposta) {
+        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+        // alert(`Dados recebidos: ${JSON.stringify(resposta)}`);
+        resposta.reverse();
+        
+        var jovem = 0;
+        var adulto = 0;
+        var idoso = 0;
+        
+        for(var i = 0; i < resposta.length; i++){
+          if(+resposta[i].idade < 18){
+            jovem++
+          }else if(+resposta[i].idade >= 18 && resposta[i].idade < 60){
+            adulto++
+          }else{
+            idoso++
+          }
+        }
+        
+                  configPie.data.datasets[0].data.push(jovem, adulto, idoso);
+                  
+                  var ax_chartPie = new Chart(ctxPie, configPie); 
+                  
+                });
+              } else {
+              console.error('Nenhum dado encontrado ou erro na API');
+            }
+      })
+          .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+          });
+
+          /* Salvando json Cidade */
+
+          fetch("/usuarios/Cidade", { cache: 'no-store' }).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (resposta) {
+        console.log(`Dados recebidos: ${JSON.stringify(resposta)}`);
+        // alert(`Dados recebidos: ${JSON.stringify(resposta)}`);
+        resposta.reverse();
+       
+        
+        var SP = 0;
+        var MG = 0;
+        var RJ = 0;
+        setTimeout(function () {
+                  
+
+        
+        for(var i = 0; i < resposta.length; i++){
+          if(resposta[i].cidade == "SP"){
+            SP ++
+          }else if(resposta[i].cidade == "RJ" ){
+            RJ ++
+          }else if(resposta[i].cidade == "MG"){
+             MG ++
+          }
+        }
+        
+                  configBar.data.datasets[0].data.push(SP, MG, RJ);
+                  
+                  var ax_chartBar = new Chart(ctxBar, configBar);
+
+
+                   
+                }, 1000); // Test
+                });
+              } else {
+              console.error('Nenhum dado encontrado ou erro na API');
+            }
+      })
+          .catch(function (error) {
+            console.error(`Erro na obtenção dos dados p/ gráfico: ${error.message}`);
+          });
+
+
+
+// criando o gráfico, chamando o new Chart da biblioteca, passando o contexto e as configurações
+
+let btn = document.querySelector("#btn");
+  let sidebar = document.querySelector(".sidebar");
+  let searchBtn = document.querySelector(".bx-search");
+
+  btn.onclick = function(){
+    sidebar.classList.toggle("active")
+  }
+                                                    /* Side Bar */
+  searchBtn.onclick = function(){
+    sidebar.classList.toggle("active")
+  }
+
+  btn.onclick = function(){
+    sidebar.classList.toggle("active")
+  }
+</script>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/template.css"/>
+  <link rel="stylesheet" href="/css/home.css">
+  <base href="/">
+  <title>Dashboard</title>
+</head>
+
+<body onload="validarSessao()">
+  <div class="box-shadow box-shadow-top"></div>
+  <div class="box-shadow box-shadow-left"></div>
+  <div class="header">
+    <div class="perfil">
+      <div class="container">
+        <img src="./assets/perfil.jpg" class="foto-perfil"></img>
+        <div class="info-perfil">
+          <p class="nome-perfil" id="nomePerfil">{%NOMEUSUARIO%}</p>
+          <p class="cargo-perfil" id="cargoPerfil">{%CARGOUSUARIO%}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="menu">
+    <header>
+      <div class="container">
+        <img src="./assets/logo-header.svg" alt="" class="menu-logo">
+      </div>
+    </header>
+    <div class="nav-bar">
+      <div class="container">
+        <a href="./">
+          <div class="link-container bem-vindo">
+            <div class="link-header">
+              <img src="./assets/icons/icons8-home-144 1.svg" class="icon-link"></img>
+              <p class="title-link">Bem vindo!</p>
+            </div>
+          </div>
+        </a>
+        <div class="link-container dashboard" value="false">
+          <div class="link-header">
+            <img src="./assets/icons/speedometer-svgrepo-com 1.svg" class="icon-link click-dashboard"></img>
+            <p class="title-link click-dashboard">Dashboard</p>
+            <img src="./assets/icons/Polygon 2.svg" class="drop-down click-dashboard"></img>
+          </div>
+          <ul>
+            <a href="">
+              <li>Setups</li>
+            </a>
+            <a href="" style="display: none">
+              <li>Inventário</li>
+            </a>
+          </ul>
+        </div>
+        <div class="link-container times">
+          <div class="link-header">
+            <img src="./assets/icons/team-svgrepo-com 1.svg" class="icon-link"></img>
+            <p class="title-link">Times</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="content">
+    
+  </div>
+</body>
+
+</html>
+<script src="./js/events.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./js/charts.js"></script>
