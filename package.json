@@ -3,7 +3,8 @@
   "version": "0.0.1",
   "private": true,
   "script" : {
-    "start": "node ./dashboard2.0/app.js",
-    "postinstall": "cd dashboard2.0 && npm install"
+    "start": "node /dashboard2.0/app.js",
+    "postinstall": "cd dashboard2.0 && npm install",
+    "postrun": "cd dashboard2.0 && npm run start"
   }
 }
