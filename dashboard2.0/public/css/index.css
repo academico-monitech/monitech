@@ -16,7 +16,6 @@ html {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  transition: 2s;
 }
 
 body {
@@ -387,17 +386,17 @@ a {
 }
 
 
-.box {
-  width: 300px;
-  height: auto;
-  background-color: #f2f2f2;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  box-shadow: 0 0 15px -2px rgba(17, 24, 39, 0.5);
-}
+  .box {
+    width: 300px;
+    height: auto;
+    background-color: #f2f2f2;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 0 15px -2px rgba(17, 24, 39, 0.5);
+  }
 
 .box p {
   font-size: 20px;

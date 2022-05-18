@@ -22,7 +22,7 @@ body {
   overflow-y: scroll;
 }
 
-.header .container {
+/* .header .container {
   width: 100%;
   margin: auto;
   background-color: #FFFFFF;
@@ -95,7 +95,50 @@ body {
   color: #1e0161;
   text-transform: uppercase;
 }
+ */
 
+#navbar {
+  width: 100%;
+  height: 50px;
+  background: #FFFFFF;
+  color: #474A51;
+  /* position: fixed; */
+  box-shadow: 0px 0px 27.0741px -1.46346px rgba(17, 24, 39, 0.05);
+}
+
+#navbar-container {
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+}
+
+#navbar-items {
+  display: flex;
+  list-style: none;
+  letter-spacing: 2px;
+  /* text-transform: uppercase; */
+}
+
+#navbar-items li {
+  padding: 10px;
+}
+
+#navbar-items li:hover {
+  font-weight: bold;
+  border-bottom: 2px solid #2947A9;
+}
+
+a {
+  text-decoration: none;
+  color: #474A51;
+}
 
 /*Fundo cadastro*/
 
@@ -284,18 +327,18 @@ body {
 }
 
 /* footer */
-footer {
-  /* position: absolute; */
-  bottom: 0;
+/* footer { */
+/* position: absolute; */
+/* bottom: 0;
   left: 0;
   right: 0;
   background: #2947A9;
-  height: auto;
-  /* width: 100vw; */
-  /* padding-top: 40px; */
-  color: #fff;
-}
-
+  height: auto; */
+/* width: 100vw; */
+/* padding-top: 40px; */
+/* color: #fff;
+} */
+/* 
 .footer-content {
   display: flex;
   align-items: center;
@@ -321,7 +364,7 @@ footer {
 
 .socials li {
   margin: 0 10px;
-}
+} */
 
 
 /* .socials a i{
@@ -333,11 +376,11 @@ footer {
 /* .socials a:hover i{
   color: aqua;
 } */
-
+/* 
 .footer-bottom {
-  background: #2947A9;
-  /* width: 100vw; */
-  padding: 20px;
+  background: #2947A9; */
+/* width: 100vw; */
+/* padding: 20px;
   padding-bottom: 40px;
   text-align: center;
 }
@@ -353,14 +396,14 @@ footer {
   color: #44bae8;
   font-size: 16px;
   text-decoration: none;
-}
+} */
 
 /* .footer-bottom span{
    text-transform: uppercase;
    opacity: .4;
    font-weight: 200;
 } */
-
+/* 
 .footer-menu {
   float: right;
 }
@@ -381,4 +424,22 @@ footer {
 
 .footer-menu ul li a:hover {
   color: #27bcda;
+} */
+
+#footer {
+  background: #2947A9;
+  color: #f2f2f2;
+  padding: 30px;
+  text-align: center;
+  line-height: 30px;
+}
+
+#footer .socials {
+  display: flex;
+  justify-content: center;
+}
+
+.socials li {
+  list-style: none;
+  padding: 20px;
 }
