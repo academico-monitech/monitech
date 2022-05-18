@@ -1,12 +1,13 @@
 {
-  "name": "projeto-acquatec",
-  "version": "1.0.0",
-  "description": "",
+  "name": "projeto-monitech",
+  "version": "0.0.1",
   "main": "index.js",
+  "private": "true",
   "scripts": {
-    "start": "node app.js",
+    "start": "node ./app.js",
     "dev": "nodemon --exec node app.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "npm install"
   },
   "author": "Feito pelos desenvolvedores @ Bandtec Digital School",
   "license": "MIT",
