@@ -1,12 +1,11 @@
 {
-  "name": "projeto-monitech",
-  "version": "0.0.1",
+  "name": "projeto-acquatec",
+  "version": "1.0.0",
   "main": "index.js",
   "private": "true",
   "scripts": {
     "start": "node ./app.js",
     "dev": "nodemon --exec node app.js"
-    
   },
   "author": "Feito pelos desenvolvedores @ Bandtec Digital School",
   "license": "MIT",
