@@ -18,11 +18,6 @@ header {
 }
 
 
-.menu{
-    position: sticky;
-    top: 45px;
-    z-index: 2;
-}
 
 .inventario-content{
     width: 971px;
@@ -39,6 +34,10 @@ header {
     border-bottom: 1px solid #DADADA;
     align-content: center;
     align-items: center;
+    position: sticky;
+    top: 0;
+    background-color: #FFF;
+    z-index: 1;
 }
 .inventario-content p {
     width: 100px;
@@ -85,4 +84,54 @@ header {
     background-color: #444444; /* color of the scroll thumb */
     border-radius: 20px; /* roundness of the scroll thumb */
     border: 3px solid #44444400; /* creates padding around scroll thumb */
+}
+
+.pesquisa{
+    position: absolute;
+    top: 62.5px;
+    left: 245px;
+    opacity: 50%;
+    transition: 0.3s;
+}
+
+.pesquisa input{
+    border-radius: 70px;
+    border: 1px solid #444;
+    height: 35px;
+    padding: 0 15px 0 40px;
+    font-weight: 400;
+    font-size: 20px;
+    color: #444444;
+}
+
+*:focus{
+    outline: none;
+    opacity: 100%;
+}
+
+.pesquisa img{
+    position: absolute;
+    width: 20px;
+    top: 8px;
+    left: 10px;
+}
+
+#msgNaoEncontrou {
+    position: absolute;
+    left: 681px;
+    top: 244px;
+    display: none;
+    z-index: 10;
+}
+
+#msgNaoEncontrou > p{
+    font-weight: 300;
+    font-size: 35px;
+    line-height: 42px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #44444479;
+    width: 200px;
+    height: 200px;
 }

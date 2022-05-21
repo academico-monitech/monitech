@@ -10,6 +10,13 @@
     <title>Document</title>
 </head>
 <body onload="">
+    <div class="pesquisa">
+        <input type="text" id="caixaPesquisa" placeholder="pesquisar" onfocusin="turnOp100()" onfocusout="turnOp50()" oninput="pesquisa(this.value)">
+        <img src="./assets/icons/search.svg" alt="">
+    </div>
+    <div id="msgNaoEncontrou">
+        <p>Nenhum resultado encontrado</p>
+    </div>
     <div class="page">
         <div class="inventario-content" onload="">
             <div class="head">
@@ -20,6 +27,9 @@
                 <p>Cores</p>
                 <p>Ram</p>
                 <p>Total Disco</p>
+            </div>
+            <div id="lista">
+
             </div>
         </div>
      </div>
@@ -64,6 +74,7 @@
     </div>
 </body>
 </html>
-<script src="/js/events.js"></script>
-<script src="/js/elements.js"></script>
-<script src="/js/inventario.js"></script>
+<script src="./js/events.js"></script>
+<script src="./js/elements.js"></script>
+<script src="./js/inventario.js"></script>
+<script src="./js/funções.js"></script>

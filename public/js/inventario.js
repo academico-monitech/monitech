@@ -1,3 +1,6 @@
+const maquinas = [];
+const maquinasPesquisa = [];
+
 const createItem = function(info){
     const item = document.createElement('div')
     item.classList.add('inventario-item')
@@ -35,14 +38,51 @@ const createItem = function(info){
 
 
 const getLista = function(){
+    maquinas.length = 0;
     fetch('/setups/listarCompleta').then(function(resposta){
         resposta.json().then(function(info){
             console.log(info);
             info.forEach(info => {
-                document.querySelector('.inventario-content').append(createItem(info))
+                maquinas.push(info)
             });
+            atualizarLista(maquinas);
         })
     })
 }
 
+const pesquisa = function(string){
+    maquinasPesquisa.length = 0;
+    string = string.toLowerCase();
+    maquinas.map(el => {
+        if (
+            el.hostname.toLowerCase().includes(string) ||
+            el.dono.toLowerCase().includes(string) || 
+            el.cpu.toLowerCase().includes(string)
+        ) {
+            maquinasPesquisa.push(el)
+        }
+    })
+    atualizarLista(maquinasPesquisa, string);
+}
+
+const atualizarLista = function(array, string){
+    document.querySelector('#lista').innerHTML = '';
+    document.getElementById('msgNaoEncontrou').style.display = "none"
+    if(array.length == 0){
+        if(string.length==0){
+            maquinas.forEach(maquina => {
+                document.querySelector('#lista').append(createItem(maquina))
+            });
+        } else {
+            document.querySelector('#lista').innerHTML = "";
+            document.getElementById('msgNaoEncontrou').style.display = "block"
+        }
+    } else {
+        array.forEach(maquina => {
+            document.querySelector('#lista').append(createItem(maquina))
+        });
+    }
+}
+
 getLista()
+console.log(maquinas);

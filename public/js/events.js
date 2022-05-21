@@ -97,3 +97,12 @@ document.querySelector('.setups').addEventListener('click', function() {
 document.querySelector('.inventario').addEventListener('click', function() {
     window.location.href = '/inventario.html'
 })
+
+const turnOp100 = function(){
+    document.querySelector('.pesquisa').style.opacity = "100%";
+}
+
+const turnOp50 = function(){
+    document.querySelector('.pesquisa').style.opacity = "50%";
+}
+
