@@ -193,8 +193,35 @@ header > img {
     bottom: 55px;
     width: 1067px;
     height: calc(100% - 155px);
+    transition: 0.5s;
 }
 
 .opacity{
     opacity: 50%;
+}
+
+.sair {
+    width: 60px;
+    height: auto;
+    position: absolute;
+    z-index: 10;
+    bottom: 20px;
+    left: 50px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.sair > * {
+    user-select: none;
+}
+
+.sair img{
+    height: 20px;
+}
+
+.sair p {
+    font-size: 15px;
+    color: #FFF;
+    font-weight: 500;
 }

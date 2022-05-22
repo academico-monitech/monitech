@@ -12,7 +12,7 @@
     <title>Monitech</title>
 </head>
 
-<body>
+<body onload="validarSessao()">
     <div class="fundo">
         <div class="box">
             <p>Obrigado!</p> 
@@ -23,13 +23,13 @@
 
     <nav id="navbar">
         <div id="navbar-container">
-            <div class="logo"><img src="./assets/logo-header.svg" alt=""></div>
+            <div class="logo" id="logo-img"><img src="./assets/logo-header.svg" alt=""></div>
             <ul id="navbar-items">
                 <li><a href="#showcase">Início</a></li>
                 <li><a href="#clients">Sobre nós</a></li>
                 <li><a href="#contact">Contato</a></li>
-                <li><a href="./cadastro.html">Cadastro</a></li>
-                <li><a href="./login.html">Login</a></li>
+                <li><a href="./cadastro.html" id="cadastro">Cadastro</a></li>
+                <li><a href="./login.html" id="login">Login</a></li>
 
             </ul>
         </div>
@@ -174,3 +174,30 @@
 </html>
 
 <script src="./js/index.js"></script>
+<script>    
+    function validarSessao(){
+        const login = document.getElementById('login');
+        const cadastro = document.getElementById('cadastro');
+        var idUsuario = sessionStorage.ID_USUARIO;
+        var email = sessionStorage.EMAIL_USUARIO;
+        var nome = sessionStorage.NOME_USUARIO;
+        var cargo = sessionStorage.CARGO_USUARIO;
+        if(email == null && nome == null && idUsuario == null && cargo == null) return
+
+        login.innerHTML = "Sair"
+        login.removeAttribute('href')
+        login.addEventListener('click', function(){
+            limparSessao()
+        })
+        cadastro.innerHTML = "Dashboard"
+        cadastro.removeAttribute('href');
+        cadastro.setAttribute('href', './bem-vindo.html')
+    }
+
+    function limparSessao() {
+        // aguardar();
+        sessionStorage.clear();
+        // finalizarAguardar();
+        window.location = "/index.html";
+    }
+</script>

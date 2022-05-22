@@ -32,7 +32,7 @@
 
     <nav id="navbar">
         <div id="navbar-container">
-            <div class="logo"><img src="./assets/logo-header.svg" alt=""></div>
+            <div class="logo" id="logo-img"><img src="./assets/logo-header.svg" alt=""></div>
             <ul id="navbar-items">
                 <li><a href="./index.html#showcase">Início</a></li>
                 <li><a href="./index.html#clients">Sobre nós</a></li>
@@ -77,6 +77,10 @@
 </html>
 
 <script>
+
+    document.querySelector('#logo-img').addEventListener('click', function(){
+        window.location = "/index.html";
+    })
     function entrar() {
 
 

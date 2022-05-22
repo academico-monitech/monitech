@@ -10,32 +10,33 @@
     <title>Document</title>
 </head>
 <body onload="">
-    <div class="pesquisa">
-        <input type="text" id="caixaPesquisa" placeholder="pesquisar" onfocusin="turnOp100()" onfocusout="turnOp50()" oninput="pesquisa(this.value)">
-        <img src="./assets/icons/search.svg" alt="">
-    </div>
-    <div id="msgNaoEncontrou">
-        <p>Nenhum resultado encontrado</p>
-    </div>
     <div class="page">
-        <div class="inventario-content" onload="">
-            <div class="head">
-                <p>ID</p>
-                <p>hostname</p>
-                <p>Dono</p>
-                <p id="big-name">CPU</p>
-                <p>Cores</p>
-                <p>Ram</p>
-                <p>Total Disco</p>
-            </div>
-            <div id="lista">
-
+        <div class="pesquisa hover">
+            <input type="text" id="caixaPesquisa" placeholder="pesquisar" onfocusin="turnOp100()" onfocusout="turnOp50()" oninput="pesquisa(this.value)">
+            <img src="./assets/icons/search.svg" alt="">
+        </div>
+        <div id="msgNaoEncontrou">
+            <p>Nenhum resultado encontrado</p>
+        </div>
+        <div class="page-content">
+            <div class="inventario-content" onload="">
+                <div class="head">
+                    <p>ID</p>
+                    <p>hostname</p>
+                    <p>Dono</p>
+                    <p id="big-name">CPU</p>
+                    <p>Cores</p>
+                    <p>Ram</p>
+                    <p>Total Disco</p>
+                </div>
+                <div id="lista">
+                </div>
             </div>
         </div>
      </div>
     <header>
         <div class="box-shadow"></div>
-        <img src="/assets/icons/logo-header.svg" alt="">
+        <img src="/assets/icons/logo-header.svg" alt="" id="logo-img">
         <div class="info-usuario">
             <p id="nome_usuario">{%NOMEUSUARIO%}</p>
             <p id="cargo_usuario">{%CARGOUSUARIO%}</p>
@@ -69,6 +70,10 @@
                     <img src="/assets/icons/grupo-azul.svg" alt="">
                     <p>Equipes</p>
                 </div>
+            </div>
+            <div class="sair hover">
+                <img src="./assets/icons/exit.svg" >
+                <p>SAIR</p>
             </div>
         </div>
     </div>

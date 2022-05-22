@@ -8,6 +8,10 @@
   src: url("../fonts/WorkSans-VariableFont_wght.ttf")
 }
 
+body > p, a, h1, h2, li, ul, img, span{
+  user-select: none;
+}
+
 html {
   scroll-behavior: smooth;
 }

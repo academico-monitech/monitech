@@ -13,6 +13,7 @@ itens.forEach(el => {
 btnEsconderMenu.addEventListener("click", function (){
     if(btnEsconderMenu.classList.contains('mostrando')){
         document.querySelector('.menu').style.left = "-140px";
+        document.querySelector('.page').style.right ='125px' ;
         btnEsconderMenu.classList.remove('mostrando');
         document.querySelector('.content-menu').classList.add('escondido');
         document.querySelector('.btn-esconder').classList.add('escondido');
@@ -20,6 +21,7 @@ btnEsconderMenu.addEventListener("click", function (){
 
     } else {
         document.querySelector('.menu').style.left = "0";
+        document.querySelector('.page').style.right ='55px' ;
         btnEsconderMenu.classList.add('mostrando');
         document.querySelector('.content-menu').classList.remove('escondido');
         document.querySelector('.btn-esconder').classList.remove('escondido');
@@ -85,6 +87,12 @@ const opacityCards = function() {
         })
     })
 }
+
+document.querySelector('.sair').addEventListener('click', function(){limparSessao()})
+
+document.querySelector('#logo-img').addEventListener('click', function(){
+    window.location = "/index.html";
+})
 
 document.querySelector('.bem-vindo').addEventListener('click', function() {
     window.location.href = '/bem-vindo.html'

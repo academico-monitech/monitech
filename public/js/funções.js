@@ -10,11 +10,12 @@ function validarSessao() {
   const nomePerfil = document.getElementById('nome_usuario');
   const cargoPerfil = document.getElementById('cargo_usuario');
 
-  if (email != null && nome != null && idUsuario != null && cargo != null) {
+
+  if(email == null && nome == null && idUsuario == null && cargo == null) window.location = "/login.html";
+
+  if (document.getElementById('nome_usuario') || document.getElementById('cargo_usuario')){
     nomePerfil.innerHTML = nome;
     cargoPerfil.innerHTML = cargo
-  } else {
-      window.location = "/login.html";
   }
 }
 
@@ -22,7 +23,7 @@ function limparSessao() {
   // aguardar();
   sessionStorage.clear();
   // finalizarAguardar();
-  window.location = "../login.html";
+  window.location = "/index.html";
 }
 
 // carregamento (loading)
