@@ -2,81 +2,97 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./assets/icon.svg">
-    <link rel="stylesheet" href="./css/cadastroStyle.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="./assets/icon.svg">
+  <link rel="stylesheet" href="./css/cadastroStyle.css">
 
-    <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/responsive.css">
-    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
-    <title>Cadastro</title>
+  <link rel="stylesheet" media="screen and (max-width: 768px)" href="css/responsive.css">
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100&display=swap" rel="stylesheet">
+  <title>Cadastro</title>
 </head>
 
 <body>
-    <nav id="navbar">
-        <div id="navbar-container">
-            <div class="logo"><img src="./assets/logo-header.svg" alt=""></div>
-            <ul id="navbar-items">
-                <li><a href="./index.html#showcase">Início</a></li>
-                <li><a href="./index.html#clients">Sobre nós</a></li>
-                <li><a href="./index.html#contact">Contato</a></li>
-                <!-- <li><a href="./cadastro.html"><b>Cadastro</b></a></li> -->
-                <li><a href="./login.html"><b>Login</b></a></li>
 
-            </ul>
-        </div>
-    </nav>
-    <div class="container-cadastro">
+  <div class="fundo">
+    <div class="box">
+      <div class="box-validando">
+        <p>Aguarde...</p>
+        <p class="login-validando">Validando informações.</p>
+        <img src="/assets/icon/loading.gif" alt="">
+      </div>
+      <div class="box-invalido">
+        <p class="login-invalido">Cadastro inválido! Verifique as informações</p>
+        <a href="/login.html"><img src="/assets/erro.png" alt=""></a>
 
-        <section>
-            <div class="text-cadastro">
-                <h1>Cadastre-se</h1>
-                <h3>Não possui um cadastro?</h3>
-                <h3> Preencha o formulário a seguir e comece sua jornada em nossa plataforma!</h3>
-                <div class="esconder">
-                    <h4>Já se cadastrou? Faça login aqui:</h4>
-                    <button onclick="window.location.href ='./login.html'">Já tenho uma conta</button>
-                </div>
-            </div>
-
-            <div class="form">
-                <fieldset>
-                    <div class="container">
-                        <input type="text" required name="nome" autofocus id="ipt_nome" class="ipt-nome">
-                        <label>Nome</label>
-                    </div>
-                    <div class="container">
-                        <input type="text" required name="cargo" autofocus id="ipt_cargo" class="ipt-cargo">
-                        <label>Cargo</label>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div class="container">
-                        <input type="email" required name="email" autofocus id="ipt_email" class="ipt-email">
-                        <label>E-mail</label>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <div class="container">
-                        <input type="password" required name="senha" autofocus id="ipt_senha" class="ipt-senha">
-                        <label>Senha</label>
-                    </div>
-                    <div class="container">
-                        <input type="password" required name="confirmacao-senha" autofocus id="ipt_confirmacao"
-                            class="ipt-confirmacao">
-                        <label>Confirmação</label>
-                    </div>
-                </fieldset>
-
-                <fieldset>
-                    <button class="btn" onclick="cadastrar()">Cadastrar</button>
-                </fieldset>
-            </div>
+      </div>
     </div>
-    </section>
+  </div>
+
+  <nav id="navbar">
+    <div id="navbar-container">
+      <div class="logo"><img src="./assets/logo-header.svg" alt=""></div>
+      <ul id="navbar-items">
+        <li><a href="./index.html#showcase">Início</a></li>
+        <li><a href="./index.html#clients">Sobre nós</a></li>
+        <li><a href="./index.html#contact">Contato</a></li>
+        <!-- <li><a href="./cadastro.html"><b>Cadastro</b></a></li> -->
+        <li><a href="./login.html"><b>Login</b></a></li>
+
+      </ul>
+    </div>
+  </nav>
+  <div class="container-cadastro">
+
+    <section>
+      <div class="text-cadastro">
+        <h1>Cadastre-se</h1>
+        <h3>Não possui um cadastro?</h3>
+        <h3> Preencha o formulário a seguir e comece sua jornada em nossa plataforma!</h3>
+        <div class="esconder">
+          <h4>Já se cadastrou? Faça login aqui:</h4>
+          <button onclick="window.location.href ='./login.html'">Já tenho uma conta</button>
+        </div>
+      </div>
+
+      <div class="form">
+        <fieldset>
+          <div class="container">
+            <input type="text" required name="nome" autofocus id="ipt_nome" class="ipt-nome">
+            <label>Nome</label>
+          </div>
+          <div class="container">
+            <input type="text" required name="cargo" autofocus id="ipt_cargo" class="ipt-cargo">
+            <label>Cargo</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="container">
+            <input type="email" required name="email" autofocus id="ipt_email" class="ipt-email">
+            <label>E-mail</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div class="container">
+            <input type="password" required name="senha" autofocus id="ipt_senha" class="ipt-senha">
+            <label>Senha</label>
+          </div>
+          <div class="container">
+            <input type="password" required name="confirmacao-senha" autofocus id="ipt_confirmacao"
+              class="ipt-confirmacao">
+            <label>Confirmação</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <button class="btn" onclick="cadastrar()">Cadastrar</button>
+        </fieldset>
+      </div>
+  </div>
+  </section>
 </body>
 
 </html>
@@ -128,7 +144,8 @@
       return false;
     }
 
-
+    document.querySelector(".fundo").style.display = "flex";
+    document.querySelector(".box-validando").style.display = "flex";
     fetch("/usuarios/cadastrar", {
       method: "POST",
       headers: {
@@ -142,21 +159,24 @@
       })
     }).then(function (resposta) {
 
-console.log("resposta: ", resposta);
+      console.log("resposta: ", resposta);
 
-if (resposta.ok) {
-    window.alert("Cadastro realizado com sucesso!");
-    window.location = "login.html";
-    limparFormulario();
-    
-} else {
-    throw ("Houve um erro ao tentar realizar o cadastro!");
-}
-}).catch(function (resposta) {
-console.log(`#ERRO: ${resposta}`);
+      if (resposta.ok) {
+        // window.alert("Cadastro realizado com sucesso!");
+        window.location = "login.html";
+        limparFormulario();
 
-});
+      } else {
+        document.querySelector(".fundo").style.display = "flex";
+        document.querySelector(".box-invalido").style.display = "flex";
+        document.querySelector(".box-validando").style.display = "none";
+        // throw ("Houve um erro ao tentar realizar o cadastro!");
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
 
-return false;
-}
+    });
+
+    return false;
+  }
 </script>

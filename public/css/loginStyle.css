@@ -71,6 +71,22 @@ html {
 
 .box img {
   margin-bottom: 15px;
+  width: 150px;
+  height: auto;
+}
+
+.box-invalido {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.box-validando {
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
 }
 
 #navbar {

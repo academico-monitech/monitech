@@ -17,9 +17,16 @@
 
     <div class="fundo">
         <div class="box">
-            <p>Aguarde...</p>
-            <p>Validando informações.</p>
-            <img src="/assets/icon/loading.gif" alt="">
+            <div class="box-validando">
+                <p>Aguarde...</p>
+                <p class="login-validando">Validando informações.</p>
+                <img src="/assets/icon/loading.gif" alt="">
+            </div>
+            <div class="box-invalido">
+                <p class="login-invalido">Login inválido! Usuário ou senha incorretos</p>
+                <a href="/login.html"><img src="/assets/erro.png" alt=""></a>
+
+            </div>
         </div>
     </div>
 
@@ -93,6 +100,7 @@
         }
 
         document.querySelector(".fundo").style.display = "flex";
+        document.querySelector(".box-validando").style.display = "flex";
         fetch("/usuarios/autenticar", {
             method: "POST",
             headers: {
@@ -122,9 +130,10 @@
 
             } else {
 
-                window.alert("Houve um erro ao tentar realizar o login!");
-
-                document.querySelector(".fundo").style.display = "none";
+                // window.alert("Houve um erro ao tentar realizar o login!");
+                document.querySelector(".fundo").style.display = "flex";
+                document.querySelector(".box-invalido").style.display = "flex";
+                document.querySelector(".box-validando").style.display = "none";
                 resposta.text().then(texto => {
                     console.error(texto);
 
