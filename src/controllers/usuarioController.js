@@ -131,6 +131,125 @@ function cadastrar(req, res) {
     }
 }
 
+function cadastroTimes(req, res) {
+    var nome = req.body.nomeServer;
+    var area = req.body.areaServer;       /* Requerimento */
+    var cor = req.body.corServer;
+  
+  
+   
+  
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (area == undefined) {
+        res.status(400).send("Seu area está undefined!");
+    } else if (cor == undefined) {
+        res.status(400).send("Sua cor está undefined!");
+    
+    } else {
+        
+        usuarioModel.cadastroTimes(nome, area, cor)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro dos times! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+  }
+
+
+  function updateTimes(req, res) {
+    var nome = req.body.nomeServer;
+    var area = req.body.areaServer;       /* Requerimento */
+    var cor = req.body.corServer;
+    var id = req.body.idServer
+  
+  
+   
+    if (nome == undefined) {
+        res.status(400).send("Seu nome está undefined!");
+    } else if (area == undefined) {
+        res.status(400).send("Seu area está undefined!");
+    } else if (cor == undefined) {
+        res.status(400).send("Sua cor está undefined!");
+    
+    } else {
+        
+        usuarioModel.updateTimes(nome, area, cor, id)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro dos times! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+  }
+
+
+  function deleteTimes(req, res) {
+    var id = req.body.idServer
+  
+  
+   
+    if (id == undefined) {
+        res.status(400).send("Seu id está undefined!");
+    } 
+    
+    else {
+        
+        usuarioModel.deleteTimes(id)
+        .then(
+            function (resultado) {
+                res.json(resultado);
+            }
+        ).catch(
+            function (erro) {
+                console.log(erro);
+                console.log(
+                    "\nHouve um erro ao realizar o cadastro dos times! Erro: ",
+                    erro.sqlMessage
+                );
+                res.status(500).json(erro.sqlMessage);
+            }
+        );
+    }
+  }
+
+
+  function buscarTimes(req, res) {
+  
+    console.log(`Recuperando as ultimas cidades`);
+  
+    usuarioModel.buscarTimes().then(function (resultado) {
+        if (resultado.length > 0) {
+            res.status(200).json(resultado);
+        } else {
+            res.status(204).send("Nenhum resultado encontrado!")
+        }
+    }).catch(function (erro) {
+        console.log(erro);
+        console.log("Houve um erro ao buscar as ultimas medidas.", erro.sqlMessage);
+        res.status(500).json(erro.sqlMessage);
+    });
+  }
+
 module.exports = {
     entrar,
     cadastrar,
@@ -138,4 +257,8 @@ module.exports = {
     testar,
     buscarUltimasMedidasIdade,
     buscarCidade,
+    buscarTimes,
+    cadastroTimes,
+    updateTimes,
+    deleteTimes,
 }

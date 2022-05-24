@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet" href="./css/cadastro-times.css">
+  <link rel="stylesheet" href="/css/template.css" />
+  <link rel="stylesheet" href="/css/bem-vindo.css">
+  <title>Document</title>
+</head>
+
+  
+  
+<body onload="">
+  <div class="body">
+      <header>
+          <div class="box-shadow"></div>
+          <img src="/assets/icons/logo-header.svg" alt="" id="logo-img">
+          <div class="info-usuario">
+              <p id="nome_usuario">{%NOMEUSUARIO%}</p>
+              <p id="cargo_usuario">{%CARGOUSUARIO%}</p>
+          </div>
+      </header>
+      <div class="menu" id="menu">
+          <div class="box-shadow"></div>
+          <div class="interacao-menu">
+              <img src="/assets/icons/x.svg" alt="" id="botao-interacao" class="mostrando hover">
+          </div>
+          <div class="content-menu"></div>
+              <div class="item ">
+                  <div class="item-content hover bem-vindo">
+                      <img src="/assets/icons/icons8-home-144 1 (1).svg" alt="">
+                      <p>Bem vindo!</p>
+                  </div>
+              </div>
+              <div class="item expansivel">
+                  <div class="btn-esconder mostrando"></div>
+                  <div class="item-content hover btn-esconder-div">
+                      <img src="/assets/icons/speedometer-svgrepo-com 1 (1).svg" alt="">
+                      <p>Dashboard</p>
+                  </div>
+                  <div class="subitem-content">
+                      <p class="hover setups">Setups</p>
+                      <p class="hover inventario">Inventário</p>
+                  </div>
+              </div>
+              <div class="item ">
+                  <div class="item-content hover equipes">
+                      <img src="/assets/icons/grupo-azul.svg" alt="">
+                      <p>Equipes</p>
+                  </div>
+              </div>
+              <div class="sair hover">
+                <img src="./assets/icons/exit.svg" >
+                <p>SAIR</p>
+            </div>
+          </div>
+      </div>
+      
+      <div class="page">
+        <div class="container">
+          <div class="header">
+            <span>Cadastro de Equipes</span>
+            <button onclick="testezinho()" id="new">Incluir</i></button>
+          </div>
+      
+          <div class="divTable">
+            <table>
+              <thead id="teste">
+                <tr>
+                  <th>Nome</th>
+                  <th>Area</th>
+                  <th>Cor</th>
+                  <th class="acao">Editar</th>
+                  <th class="acao">Excluir</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+      
+          <div class="modal-container">
+            <div class="modal">
+           
+                <label >Nome</label>
+                <input id="m_nome" type="text"/>
+        
+                <label >Area</label>
+                <input id="m_area" type="text"  />
+        
+                <label >Cor</label>
+                <input id="m_cor" type="color"/>
+                <button id="btSalvar" onclick="">Salvar</button>
+            
+            </div>
+          </div>
+      
+        </div>
+  </div>
+</body>
+</html>
+<script src="/js/events.js"></script>
+<script src="/js/elements.js"></script>
+<script src="./js/funções.js"></script>
+<script src="./js/cadastro-times.js"></script>
+<script>
+
+  function updateItem(id){
+    var nome = m_nome.value;
+    var area = m_area.value;
+    var cor = m_cor.value;
+
+    fetch("/usuarios/updateTimes", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        nomeServer: nome,
+        areaServer: area,
+        corServer: cor,
+        idServer: id,
+      
+      })
+    }).then(function (resposta) {
+
+  console.log("resposta: ", resposta);
+
+  if (resposta.ok) {
+      window.alert("Cadastro realizado com sucesso!");
+      buscarTimes();
+      
+  } else {
+      throw ("Houve um erro ao tentar realizar o cadastro!");
+  }
+  }).catch(function (resposta) {
+  console.log(`#ERRO: ${resposta}`);
+
+  });
+
+  return false;
+}
+
+
+function deleteTimes(id){
+
+    fetch("/usuarios/deleteTimes", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idServer: id,
+      })
+    }).then(function (resposta) {
+
+  console.log("resposta: ", resposta);
+
+  if (resposta.ok) {
+      window.alert("Cadastro realizado com sucesso!");
+      buscarTimes();
+      
+  } else {
+      throw ("Houve um erro ao tentar realizar o cadastro!");
+  }
+  }).catch(function (resposta) {
+  console.log(`#ERRO: ${resposta}`);
+
+  });
+
+  return false;
+}
+  
+
+  function cadastroTimes() {
+
+
+    var nomeVar =  m_nome.value;
+    var areaVar = m_area.value;
+    var corVar = m_cor.value;
+    
+
+
+
+    if (nomeVar == "" || areaVar == "" || corVar == "" ) {
+
+      window.alert("Preencha todos os campos para prosseguir!");
+      if (nomeVar == "") {
+        console.log('nome está em branco')
+      }
+      if (areaVar == "") {
+        console.log('area está em branco')
+      }
+      if (corVar == "") {
+        console.log('cor está em branco')
+      }
+      return false;
+    }
+
+
+    fetch("/usuarios/cadastroTimes", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        nomeServer: nomeVar,
+        areaServer: areaVar,
+        corServer: corVar,
+      
+      })
+    }).then(function (resposta) {
+
+console.log("resposta: ", resposta);
+
+if (resposta.ok) {
+    window.alert("Cadastro realizado com sucesso!");
+    buscarTimes();
+    
+} else {
+    throw ("Houve um erro ao tentar realizar o cadastro!");
+}
+}).catch(function (resposta) {
+console.log(`#ERRO: ${resposta}`);
+
+});
+
+return false;
+}
+
+fetch("/usuarios/timesbuscar", { cache: 'no-store' }).then(function (response) {
+    if (response.ok) {
+      response.json().then(function (resposta) {
+        console.log(`Dados recebidos da busca: ${JSON.stringify(resposta)}`);
+        resposta.reverse();
+
+for(var i=0; i<resposta.length; i++){
+  teste.innerHTML += `
+   <tr>
+     <td>${resposta[i].nome}</td>
+     <td>${resposta[i].area}</td>
+     <td>${resposta[i].cor}</td>
+     <td class="acao">
+      <button onclick="editItem(${resposta[i].id})"><i class='bx bx-edit' ></i></button>
+     </td>
+     <td class="acao">
+       <button onclick="deleteItem(${resposta[i].id})"><i class='bx bx-trash'></i></button>
+    </td>
+    </tr>
+   ` 
+}
+  //  tbody.appendChild(tr)
+  });
+              } else {
+              console.error('Nenhum dado encontrado ou erro na API');
+            }
+      })
+          .catch(function (error) {
+            console.error(`Erro na obtenção dos dados: ${error.message}`);
+          });
+</script>
