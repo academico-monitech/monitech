@@ -28,4 +28,20 @@ router.get("/Cidade", function (req, res) {
     usuarioController.buscarCidade(req, res);
 })
 
+router.post("/cadastroTimes", function (req, res) {
+    usuarioController.cadastroTimes(req, res);
+});
+
+router.put("/updateTimes", function (req, res) {
+    usuarioController.updateTimes(req, res);
+});
+
+router.delete("/deleteTimes", function (req, res) {
+    usuarioController.deleteTimes(req, res);
+});
+
+router.get("/timesbuscar", function (req, res) {
+    usuarioController.buscarTimes(req, res);
+});
+
 module.exports = router;
