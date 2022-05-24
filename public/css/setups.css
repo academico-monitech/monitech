@@ -17,7 +17,7 @@
 .sec-2 {
     height: 100%;
     width: 738px;
-    display: none;
+    display: block;
 }
 
 .sec-2-1 {
@@ -93,6 +93,26 @@
 
 .sec-2-2-2 .graf #chartCPU {
     width: 411px;
+}
+
+#lista_equipes {
+    border: 1px solid #9bbced;
+    border-radius: 10px;
+    background-color: #ffffff;
+    height: 25px;
+    width: 150px;
+    padding: 0px 10px;
+}
+
+select:focus {
+  box-shadow: 0 0 0 0;
+  outline: 0;
+}
+
+#lista-equipes option {
+    color: #444444;
+    font-size: 13px;
+    margin-left: 10px;
 }
 
 .lista {
