@@ -19,4 +19,8 @@ router.get("/getTempoReal/:id", function (req, res) {
     setupsController.getTempoReal(req, res);
 });
 
+router.post("/updateTimeSetup", function(req, res){
+    setupsController.updateTimeSetup(req, res)
+})
+
 module.exports = router;

@@ -106,6 +106,10 @@ document.querySelector('.inventario').addEventListener('click', function() {
     window.location.href = '/inventario.html'
 })
 
+document.querySelector('.equipes').addEventListener('click', function() {
+    window.location.href = '/cadastro-times.html'
+})
+
 const turnOp100 = function(){
     document.querySelector('.pesquisa').style.opacity = "100%";
 }

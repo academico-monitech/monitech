@@ -1,4 +1,6 @@
 let isOnTimer = false;
+let currentSetup = {};
+let equipes = [];
 
 let timer;
 
@@ -32,6 +34,7 @@ function getInfoSetup(id) {
 
 function setSetup(id) {
     if (isOnTimer) {
+        currentSetup = {}
         clearInterval(timer);
         clearChart(chartRAM);
         clearChart(chartCPU);
@@ -39,19 +42,30 @@ function setSetup(id) {
     fetch(`/setups/detalhes/${id}`).then(function (resposta) {
         if (resposta.ok) {
             resposta.json().then((setup) => {
+                currentSetup = setup;
                 //document.querySelector('.info-setup').style.display = 'flex';
-                includeSetup(setup);
-                console.log(setup);
+                includeSetup(currentSetup);
+                console.log(currentSetup);
             });
         }
     });
 }
 
 const includeSetup = function (setup) {
+    console.log(setup.idEquipe);
+    if(setup.equipe){
+        listarEquipesC(setup.equipe, setup.idEquipe) 
+    } else {
+        listarEquipesS();
+    }
     const ramPorcent = setup.ram / setup.memoriaRam;
     document.querySelector(".sec-2").style.display = "initial";
     const hostname = setup.hostname || "undefined";
     document.getElementById("hostname").innerHTML = hostname;
+    document.getElementById('lista_equipes').addEventListener('change', (event) => {
+        atribuirTime(setup.id, setup.idUsuario, event.target.value);
+
+    });
     // if (setup.equipe) {
     //     document.getElementById("equipe").innerHTML = equipe;
     // } else {
@@ -88,6 +102,7 @@ const includeSetup = function (setup) {
             ".content-ram p"
         ).innerHTML = `Uso de memória: ${setup.ram}GB`;
     }
+    document.querySelector('#etiqueta_info').style.backgroundColor = setup.cor;
 };
 
 function startCharts(id) {
@@ -115,6 +130,8 @@ function createCardComEquipe() {
     img.setAttribute("src", `../assets/icons/desktop.svg`);
     const nome = document.createElement("p");
     nome.classList.add("nome");
+    const online = document.createElement("div");
+    online.setAttribute("id", "online");
     const equipe = document.createElement("p");
     equipe.classList.add("equipe");
     const etiqueta = document.createElement("div");
@@ -122,6 +139,7 @@ function createCardComEquipe() {
     cardContent.appendChild(img);
     cardContent.appendChild(nome);
     cardContent.appendChild(equipe);
+    cardContent.appendChild(online);
     cardSetup.appendChild(cardContent);
     cardSetup.appendChild(etiqueta);
 
@@ -151,13 +169,18 @@ function createCardSemEquipe() {
 }
 
 function createSetup(setup) {
+    console.log(setup);
     let card;
-    setup.equipe
-        ? (card = createCardComEquipe())
-        : (card = createCardSemEquipe());
+    if(setup.equipe){
+        card = createCardComEquipe()
+    } else {
+        card = createCardSemEquipe()
+    }
+    console.log(card);
     const id = setup.id;
     const hostname = setup.hostname || "undefined";
     const cor = setup.cor || "#444444";
+    console.log(cor);
     card.querySelector(".nome").innerHTML = hostname;
     if (setup.equipe) {
         card.querySelector(".equipe").innerHTML = setup.equipe;
@@ -175,17 +198,15 @@ function createSetup(setup) {
     return card;
 }
 
-function listarTimes() {
+function getTimes() {
+    equipes = [];
     fetch("/usuarios/timesbuscar", { cache: "no-store" })
         .then(function (response) {
             if (response.ok) {
                 response.json().then(function (resposta) {
                     console.log(resposta)
                     resposta.forEach(res => {
-                        let element = document.createElement('option');
-                        element.setAttribute('value', res.id)
-                        element.innerHTML = res.area
-                        document.querySelector('#lista_equipes').appendChild(element)
+                        equipes.push(res)
                     });
                 });
             } else {
@@ -196,3 +217,45 @@ function listarTimes() {
             console.error(`Erro na obtenção dos dados: ${error.message}`);
         });
 }
+
+function listarEquipesC(nome, id){
+    let select = document.querySelector('#lista_equipes')
+    select.innerHTML = '';
+    select.innerHTML += `<option value="${id}" selected disabled>${nome}</option>`
+    equipes.forEach(equipe => {
+        if (equipe.id != id) {
+            select.innerHTML += `<option value="${equipe.id}">${equipe.nome}</option>` 
+        }
+    }); 
+}
+
+function listarEquipesS(){
+    let select = document.querySelector('#lista_equipes')
+    select.innerHTML = '';
+    select.innerHTML += `<option value="" selected disabled>Atribuir time</option>`
+    equipes.forEach(equipe => {
+            select.innerHTML += `<option value="${equipe.id}">${equipe.nome}</option>` 
+    });
+}
+
+function atribuirTime(idSetup, idUsuario, idEquipe){
+    fetch('/setups/updateTimeSetup', {
+        method: 'POST',
+        body: JSON.stringify({
+        idSetup: idUsuario,
+        idEquipe: idEquipe
+        }),
+        headers: {
+        'Content-type': 'application/json; charset=UTF-8'
+        }
+        })
+        .then(response => {
+            console.log(response);
+            //getList();
+            
+            //setSetup(idSetup);
+            window.location.reload();
+        })
+}
+
+getTimes()
