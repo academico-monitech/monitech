@@ -15,7 +15,7 @@ const createItem = function(info){
 
     id.innerHTML = `${info.id}`
     hosname.innerHTML = `${info.hostname}`
-    dono.innerHTML = `${info.dono}`
+    dono.innerHTML = `${info.equipe}`
     cpu.innerHTML = `${info.cpu}`
     core.innerHTML = `${info.cores}`
     if(info.ram < 1) {
@@ -56,7 +56,7 @@ const pesquisa = function(string){
     maquinas.map(el => {
         if (
             el.hostname.toLowerCase().includes(string) ||
-            el.dono.toLowerCase().includes(string) || 
+            el.equipe.toLowerCase().includes(string) || 
             el.cpu.toLowerCase().includes(string)
         ) {
             maquinasPesquisa.push(el)

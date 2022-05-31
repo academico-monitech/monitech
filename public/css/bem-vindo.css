@@ -1,4 +1,6 @@
 
+
+
 .home-sec-2{
     width: 100%;
     height: 100%;
@@ -18,17 +20,19 @@
 }
 
 .page-carrossel{
-    margin-top: 61px;
-    width: 52%;
+    position: relative;
+    width: 600px;
+    margin-top: 61px; 
     height: 72%;
     display: flex;
     flex-wrap: wrap;
     align-content: space-between;
+    display: none;
+    justify-content: center;
 }
 
 .page-carrossel .img{
-    width: 90%;
-    background-color: red;
+    height: 328.93px;
 }
 .page-carrossel p{
     font-weight: 400;
@@ -37,6 +41,29 @@
     display: flex;
     align-items: center;
     text-align: center;
+    width: 600px;
+    color: var(--font);
+}
 
-    color: #5A5858;
+.carrossel-points{
+    position: absolute;
+    width: 380px;
+    height: 15px;
+    left: 344px;
+    top: 459px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.point {
+    height: 15px;
+    width: 15px;
+    border-radius: 100%;
+    background: #444444;
+    opacity: 20%;
+    transition: 0.3s;
+}
+
+.point:hover{
+    opacity: 100%;
 }

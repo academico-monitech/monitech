@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/template.css" />
     <link rel="stylesheet" href="/css/bem-vindo.css">
-    <title>Document</title>
+    <link rel="icon" href="./assets/icon.svg">
+    <title>Bem vindo!</title>
 </head>
 <body onload="">
     <div class="body">
@@ -14,8 +15,8 @@
             <div class="box-shadow"></div>
             <img src="/assets/icons/logo-header.svg" alt="" id="logo-img">
             <div class="info-usuario">
-                <p id="nome_usuario">{%NOMEUSUARIO%}</p>
-                <p id="cargo_usuario">{%CARGOUSUARIO%}</p>
+                <p id="nome_usuario"></p>
+                <p id="cargo_usuario"></p>
             </div>
         </header>
         <div class="menu" id="menu">
@@ -57,9 +58,27 @@
         <div class="page">
             <div class="home-sec-2">
                 <div class="carrossel-content">
-                    <div class="page-carrossel">
-                        <img src="/assets/home-img1.png" class="img"></img>
-                        <p>Para iniciar a navegação vá com o cursor até dashboard, expanda e clique em setups</p>
+                    <div class="page-carrossel" id="page-1" style="display: flex;">
+                        <img src="/assets/passo-1.png" class="img" ></img>
+                        <p>Bem vindo a Monitech, uma plataforma que irá te auxiliar na consulta e monitoramento de seus desktops. No menu a esquerda você poderá acessar as páginas da plataforma</p>
+                    </div>
+                    <div class="page-carrossel" id="page-2">
+                        <img src="/assets/passo-2.png" class="img" ></img>
+                        <p>Ao acessar a página Setups, uma lista de máquinas cadastradas irá aparecer e você poderá monitorar em tempo real as infromações dessas maquinas.</p>
+                    </div>
+                    <div class="page-carrossel" id="page-3">
+                        <img src="/assets/passo-3.png" class="img" ></img>
+                        <p>Na página de Inventário, você pode encontrar informações gerais sobre cada máquina, como por exemplo, a capacidade total do disco e o hostname.</p>
+                    </div>
+                    <div class="page-carrossel" id="page-4">
+                        <img src="/assets/passo-4.png" class="img" ></img>
+                        <p>Aqui você pode ver as equipes que já foram cadastradas e também cadastrar equipes novas, de acordo com a área e cor atribuída.</p>
+                    </div>
+                    <div class="carrossel-points">
+                        <div class="point" id="point-1" style="opacity: 100%;"></div>
+                        <div class="point" id="point-2"></div>
+                        <div class="point" id="point-3"></div>
+                        <div class="point" id="point-4"></div>
                     </div>
                 </div>
             </div>
@@ -70,3 +89,4 @@
 <script src="/js/events.js"></script>
 <script src="/js/elements.js"></script>
 <script src="./js/funções.js"></script>
+<script src="./js/bem-vindo.js"></script>

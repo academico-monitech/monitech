@@ -186,12 +186,14 @@
 
         login.innerHTML = "Sair"
         login.removeAttribute('href')
+        login.style.fontWeight = '700'
         login.addEventListener('click', function(){
             limparSessao()
         })
         cadastro.innerHTML = "Dashboard"
         cadastro.removeAttribute('href');
         cadastro.setAttribute('href', './bem-vindo.html')
+        cadastro.style.fontWeight = '700'
     }
 
     function limparSessao() {

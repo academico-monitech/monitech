@@ -40,6 +40,10 @@ body {
   z-index: 1;
 }
 
+#navbar-itens {
+  transition: 0.3s;
+}
+
 a {
   text-decoration: none;
   color: #474A51;

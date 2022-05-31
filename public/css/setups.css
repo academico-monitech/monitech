@@ -1,5 +1,6 @@
 * {
     margin: 0;
+    color: var(--font);
 }
 
 .page {
@@ -134,6 +135,10 @@ select:focus {
     flex-wrap: wrap;
     justify-self: flex-start;
     margin-bottom: 20px;
+}
+
+.info > h2, select {
+    margin-left: 15px;
 }
 
 .content-ram {
