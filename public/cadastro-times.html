@@ -131,9 +131,9 @@
   console.log("resposta: ", resposta);
 
   if (resposta.ok) {
-      window.alert("Cadastro realizado com sucesso!");
-      buscarTimes();
       
+      buscarTimes();
+      document.location.reload(true);
   } else {
       throw ("Houve um erro ao tentar realizar o cadastro!");
   }
@@ -161,7 +161,7 @@ function deleteTimes(id){
   console.log("resposta: ", resposta);
 
   if (resposta.ok) {
-      window.alert("Cadastro realizado com sucesso!");
+    document.location.reload(true);
       buscarTimes();
       
   } else {
@@ -218,7 +218,7 @@ function deleteTimes(id){
 console.log("resposta: ", resposta);
 
 if (resposta.ok) {
-    window.alert("Cadastro realizado com sucesso!");
+    document.location.reload(true);
     buscarTimes();
     
 } else {
