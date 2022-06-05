@@ -108,7 +108,7 @@
 <script src="./js/funções.js"></script>
 <script src="./js/cadastro-times.js"></script>
 <script>
-
+ 
   function updateItem(id){
     var nome = m_nome.value;
     var area = m_area.value;
@@ -132,7 +132,7 @@
 
   if (resposta.ok) {
       
-      buscarTimes();
+  
       document.location.reload(true);
   } else {
       throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -162,7 +162,7 @@ function deleteTimes(id){
 
   if (resposta.ok) {
     document.location.reload(true);
-      buscarTimes();
+     
       
   } else {
       throw ("Houve um erro ao tentar realizar o cadastro!");
@@ -219,7 +219,7 @@ console.log("resposta: ", resposta);
 
 if (resposta.ok) {
     document.location.reload(true);
-    buscarTimes();
+   
     
 } else {
     throw ("Houve um erro ao tentar realizar o cadastro!");
