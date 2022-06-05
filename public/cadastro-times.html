@@ -8,8 +8,7 @@
   <link rel="stylesheet" href="./css/cadastro-times.css">
   <link rel="stylesheet" href="/css/template.css" />
   <link rel="stylesheet" href="/css/bem-vindo.css">
-  <link rel="icon" href="./assets/icon.svg">
-  <title>Equipes</title>
+  <title>Document</title>
 </head>
 
   
@@ -20,8 +19,8 @@
           <div class="box-shadow"></div>
           <img src="/assets/icons/logo-header.svg" alt="" id="logo-img">
           <div class="info-usuario">
-              <p id="nome_usuario"></p>
-              <p id="cargo_usuario"></p>
+              <p id="nome_usuario">{%NOMEUSUARIO%}</p>
+              <p id="cargo_usuario">{%CARGOUSUARIO%}</p>
           </div>
       </header>
       <div class="menu" id="menu">
@@ -108,7 +107,7 @@
 <script src="./js/funções.js"></script>
 <script src="./js/cadastro-times.js"></script>
 <script>
- 
+
   function updateItem(id){
     var nome = m_nome.value;
     var area = m_area.value;
@@ -131,11 +130,11 @@
   console.log("resposta: ", resposta);
 
   if (resposta.ok) {
+    document.location.reload(true);
+      buscarTimes();
       
-  
-      document.location.reload(true);
   } else {
-      throw ("Houve um erro ao tentar atualizar o time!");
+      throw ("Houve um erro ao tentar atualizar a equipe!");
   }
   }).catch(function (resposta) {
   console.log(`#ERRO: ${resposta}`);
@@ -162,10 +161,10 @@ function deleteTimes(id){
 
   if (resposta.ok) {
     document.location.reload(true);
-     
+      buscarTimes();
       
   } else {
-      throw ("Houve um erro ao tentar excluir o time!");
+      throw ("Houve um erro ao tentar excluir a equipe!");
   }
   }).catch(function (resposta) {
   console.log(`#ERRO: ${resposta}`);
@@ -218,11 +217,12 @@ function deleteTimes(id){
 console.log("resposta: ", resposta);
 
 if (resposta.ok) {
-    document.location.reload(true);
-   
-    
+    window.alert("Criação de Equipe realizada! ");
+    buscarTimes();
+    location.reload()
+
 } else {
-    throw ("Houve um erro ao tentar realizar o cadastro!");
+    throw ("Houve um erro ao tentar cadastrar equipe!");
 }
 }).catch(function (resposta) {
 console.log(`#ERRO: ${resposta}`);
@@ -240,15 +240,15 @@ fetch("/usuarios/timesbuscar", { cache: 'no-store' }).then(function (response) {
 
 for(var i=0; i<resposta.length; i++){
   teste.innerHTML += `
-   <tr>
-     <td>${resposta[i].nome}</td>
+   <tr style="color: #5A5858">
+     <td >${resposta[i].nome}</td>
      <td>${resposta[i].area}</td>
      <td>${resposta[i].cor}</td>
-     <td class="acao">
-      <button onclick="editItem(${resposta[i].id})"><i class='bx bx-edit' ></i></button>
+     <td class="acao" ">
+      <button style="margin-left: 30px;" onclick="editItem(${resposta[i].id})"><i class='bx bx-edit' ></i></button>
      </td>
      <td class="acao">
-       <button onclick="deleteItem(${resposta[i].id})"><i class='bx bx-trash'></i></button>
+       <button style="margin-left: 30px;" onclick="deleteItem(${resposta[i].id})"><i class='bx bx-trash'></i></button>
     </td>
     </tr>
    ` 
