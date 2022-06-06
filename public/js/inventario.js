@@ -12,8 +12,8 @@ const createItem = function(info){
     const core = document.createElement('p')
     const ram = document.createElement('p')
     const totalDisco = document.createElement('p')
-
-    id.innerHTML = `${info.id}`
+    let infoId = new Date(info.id)
+    id.innerHTML = `${infoId.getDate()}/${infoId.getMonth() + 1}/${infoId.getFullYear()}`
     hosname.innerHTML = `${info.hostname}`
     dono.innerHTML = `${info.equipe}`
     cpu.innerHTML = `${info.cpu}`

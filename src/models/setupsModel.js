@@ -13,7 +13,7 @@ function listar() {
 
 function listarCompleta() {
     var instrucao = `
-        SELECT maquina.id as id, maquina.hostname as hostname, equipe.nome as equipe, maquina.processador as cpu, maquina.coreProcessador as cores, maquina.memoriaRam as ram, maquina.espacoDisco as totalDisco
+        SELECT maquina.registro as id, maquina.hostname as hostname, equipe.nome as equipe, maquina.processador as cpu, maquina.coreProcessador as cores, maquina.memoriaRam as ram, maquina.espacoDisco as totalDisco
         FROM usuario join maquina 
         on usuario.id = fk_usuario 
         join equipe
